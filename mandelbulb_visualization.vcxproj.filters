@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\auxiliary.cpp" />
+    <ClCompile Include="src\image.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\opengl_gui.cpp" />
+    <ClCompile Include="src\timer.cpp" />
+    <ClCompile Include="src\user_camera.cpp" />
+    <ClCompile Include="src\virtual_camera.cpp" />
+    <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\async_image_saver.cpp" />
+    <ClCompile Include="glad\src\glad.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\auxiliary.h" />
+    <ClInclude Include="src\i_renderer.h" />
+    <ClInclude Include="src\i_safe_destructible.h" />
+    <ClInclude Include="src\image.h" />
+    <ClInclude Include="src\opengl_gui.h" />
+    <ClInclude Include="src\timer.h" />
+    <ClInclude Include="src\user_camera.h" />
+    <ClInclude Include="src\virtual_camera.h" />
+    <ClInclude Include="src\application.h" />
+    <ClInclude Include="src\async_image_saver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{c7aa5e60-6f6f-4815-9499-43ec496c0425}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\shaders\mandelbulb.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="src\shaders\screen.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="src\shaders\screen.vert">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

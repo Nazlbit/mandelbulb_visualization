@@ -14,8 +14,8 @@ class application : public i_safe_destructible
 {
 private:
 	timer timer;
-	GLFWwindow* window;
-	opengl_gui* gui;
+	GLFWwindow* window = nullptr;
+	opengl_gui* gui = nullptr;
 
 	struct
 	{

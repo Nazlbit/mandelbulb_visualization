@@ -112,26 +112,28 @@ void main()
 
 	//AO
 
-	float ao = 1 - float(steps) / (steps + 100); // reinhard
-	//ao = pow(ao, 2); // gamma
+	float ao = steps * 0.01;
+	ao = 1 - ao / (ao + 0.5);  // reinhard
 
-	const float contrast_offset = 0.4;
-	const float contrast_mid_level = 0.65;
+	const float contrast_offset = 0.3;
+	const float contrast_mid_level = 0.5;
 	ao = contrast(ao, contrast_offset, contrast_mid_level);
-
-	//Sun
-
-	vec3 light_dir = cam_basis*normalize(vec3(-0.5, -1, 1));
-
-	vec3 refl_intersection_point = ray_marching(intersection_point - light_dir*epsilon*2, -light_dir, depth, steps);
 
 	vec3 normal = estimate_normal(intersection_point, epsilon*0.5);
 
-	float shadow = 0;
-	if(depth >= view_radius) shadow = 1;
+	fColor = vec3(ao)*(normal*0.5 + 0.5);
 
-	float luminance = clamp(dot(normal, -light_dir), 0, 1)*(1-ambient_light)*shadow + ambient_light;
-	luminance = pow(luminance, 1/2.2); // gamma correction
+	//Sun
 
-	fColor = vec3(luminance*ao*contrast(normal*0.5 + 0.5, -0.2, 1));
+//	vec3 light_dir = cam_basis*normalize(vec3(-0.5, -1, 1));
+//
+//	vec3 refl_intersection_point = ray_marching(intersection_point - light_dir*epsilon*2, -light_dir, depth, steps);
+//
+//
+//	float shadow = 0;
+//	if(depth >= view_radius) shadow = 1;
+//
+//	float luminance = clamp(dot(normal, -light_dir), 0, 1)*(1-ambient_light)*shadow + ambient_light;
+//	luminance = pow(luminance, 1/2.2); // gamma correction
+
 }
