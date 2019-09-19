@@ -144,7 +144,7 @@ void opengl_gui::init_shaders()
 	if (resolution_constraint) shader_params.offscreen_size_mandelbulb.set_value(default_fbo_size);
 	else shader_params.offscreen_size_mandelbulb.set_value(off_screen_fbo_size);
 	shader_params.offscreen_size.set_value(shader_params.offscreen_size_mandelbulb.get_value());
-	shader_params.epsilon.set_value(0.0005f);
+	shader_params.epsilon.set_value(0.002f);
 	shader_params.fov.set_value(glm::radians(45.f));
 	shader_params.mandelbulb_power.set_value(8);
 	shader_params.view_radius.set_value(10);

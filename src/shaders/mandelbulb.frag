@@ -18,7 +18,7 @@ float mandelbulb_sdf(vec3 pos) {
 	for (int i = 0; i < mandelbulb_iter_num ; i++)
 	{
 		r = length(z);
-		if (r>2) break;
+		if (r>3.) break;
 		
 		// convert to polar coordinates
 		float theta = acos(z.z / r);
